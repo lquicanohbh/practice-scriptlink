@@ -24,13 +24,31 @@ namespace PracticeScriptLink
         [WebMethod]
         public OptionObject RunScript(OptionObject optionObject, string scriptName)
         {
+            var returnOptionObject = new OptionObject();
             switch (scriptName)
             {
                 case "test":
+                    returnOptionObject = MyTestFunction(optionObject);
                     break;
                 default:
                     break;
             }
+            return returnOptionObject;
+        }
+
+        private OptionObject MyTestFunction(OptionObject optionObject)
+        {
+            var returnOptionObject = new OptionObject();
+            returnOptionObject.EntityID = optionObject.EntityID;
+            returnOptionObject.EpisodeNumber = optionObject.EpisodeNumber;
+            returnOptionObject.Facility = optionObject.Facility;
+            returnOptionObject.OptionId = optionObject.OptionId;
+            returnOptionObject.OptionStaffId = optionObject.OptionStaffId;
+            returnOptionObject.OptionUserId = optionObject.OptionUserId;
+            returnOptionObject.SystemCode = optionObject.SystemCode;
+            returnOptionObject.ErrorCode = 3;
+            returnOptionObject.ErrorMesg = "Hello World!";
+            return returnOptionObject;
         }
     }
 }
