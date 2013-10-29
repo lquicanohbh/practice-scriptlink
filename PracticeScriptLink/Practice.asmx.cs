@@ -26,7 +26,7 @@ namespace PracticeScriptLink
         {
             switch (scriptName)
             {
-                case "":
+                case "test":
                     break;
                 default:
                     break;
